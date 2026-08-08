@@ -4,9 +4,11 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>For Vinny</title>
+  <title>For Vinny ♡</title>
 
   <style>
+    @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500&family=Playfair+Display:ital,wght@0,400;1,400&display=swap');
+
     * {
       box-sizing: border-box;
     }
@@ -17,9 +19,9 @@
 
     body {
       margin: 0;
-      background: #090809;
-      color: #f5eeee;
-      font-family: Georgia, "Times New Roman", serif;
+      background: #fff8fa;
+      color: #49373d;
+      font-family: "DM Sans", sans-serif;
       overflow-x: hidden;
     }
 
@@ -30,45 +32,55 @@
     .background {
       position: fixed;
       inset: 0;
+      pointer-events: none;
       z-index: -1;
       overflow: hidden;
       background:
         radial-gradient(
-          circle at 50% 30%,
-          rgba(135, 64, 78, 0.16),
-          transparent 40%
+          circle at 20% 20%,
+          rgba(255, 183, 199, 0.22),
+          transparent 32%
         ),
-        #090809;
+        radial-gradient(
+          circle at 85% 75%,
+          rgba(255, 210, 220, 0.28),
+          transparent 35%
+        ),
+        #fff8fa;
     }
 
-    .glow {
+    .blob {
       position: absolute;
-      width: 500px;
-      height: 500px;
       border-radius: 50%;
-      background: rgba(150, 70, 85, 0.08);
-      filter: blur(100px);
-      animation: drift 12s infinite alternate ease-in-out;
+      filter: blur(60px);
+      opacity: 0.35;
+      animation: floatBlob 12s ease-in-out infinite alternate;
     }
 
-    .glow.one {
-      top: -200px;
-      left: -150px;
+    .blob.one {
+      width: 280px;
+      height: 280px;
+      background: #ffc6d4;
+      top: -80px;
+      left: -70px;
     }
 
-    .glow.two {
-      right: -200px;
-      bottom: -200px;
-      animation-delay: 4s;
+    .blob.two {
+      width: 320px;
+      height: 320px;
+      background: #f8d4df;
+      right: -120px;
+      bottom: -100px;
+      animation-delay: 3s;
     }
 
-    @keyframes drift {
+    @keyframes floatBlob {
       from {
         transform: translate(0, 0);
       }
 
       to {
-        transform: translate(100px, 60px);
+        transform: translate(50px, 35px);
       }
     }
 
@@ -90,53 +102,54 @@
 
     .opening.hidden {
       opacity: 0;
-      transform: translateY(-30px);
+      transform: translateY(-25px);
       pointer-events: none;
     }
 
     .opening-inner {
-      max-width: 650px;
+      width: min(600px, 100%);
     }
 
-    .tiny {
-      text-transform: uppercase;
-      letter-spacing: 5px;
-      font-size: 11px;
-      color: #958b8e;
-      margin-bottom: 30px;
+    .for-you {
+      font-family: "Playfair Display", serif;
+      font-size: clamp(20px, 4vw, 28px);
+      font-style: italic;
+      color: #b06b7d;
+      margin-bottom: 35px;
     }
 
     .opening h1 {
-      font-size: clamp(60px, 12vw, 120px);
-      font-weight: normal;
+      font-family: "Playfair Display", serif;
+      font-weight: 400;
+      font-size: clamp(58px, 12vw, 105px);
+      color: #6f4854;
       margin: 0;
       line-height: 0.95;
     }
 
-    .opening p {
-      max-width: 480px;
+    .opening-subtitle {
       margin: 35px auto;
-      color: #aaa0a3;
-      font-size: 17px;
+      color: #92777f;
+      font-size: 16px;
       line-height: 1.8;
     }
 
     .open-button {
-      padding: 14px 30px;
-      border: 1px solid #5c5255;
+      border: none;
+      background: #e98da4;
+      color: white;
+      padding: 14px 28px;
       border-radius: 100px;
-      background: transparent;
-      color: #eee6e7;
       font-family: inherit;
-      font-size: 15px;
+      font-size: 14px;
       cursor: pointer;
-      transition: 0.3s ease;
+      box-shadow: 0 8px 25px rgba(210, 105, 130, 0.18);
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
     }
 
     .open-button:hover {
-      background: #eee6e7;
-      color: #090809;
-      transform: translateY(-2px);
+      transform: translateY(-3px);
+      box-shadow: 0 12px 30px rgba(210, 105, 130, 0.25);
     }
 
     /* =========================
@@ -145,20 +158,20 @@
 
     .main {
       display: none;
-      max-width: 780px;
+      width: min(760px, 100%);
       margin: auto;
-      padding: 100px 25px;
+      padding: 90px 24px 60px;
     }
 
     .main.visible {
       display: block;
-      animation: appear 1.5s ease;
+      animation: pageAppear 1.2s ease;
     }
 
-    @keyframes appear {
+    @keyframes pageAppear {
       from {
         opacity: 0;
-        transform: translateY(40px);
+        transform: translateY(30px);
       }
 
       to {
@@ -168,75 +181,76 @@
     }
 
     section {
-      margin-bottom: 140px;
+      margin-bottom: 120px;
     }
 
     .section-label {
+      color: #c1788b;
       text-transform: uppercase;
-      letter-spacing: 4px;
-      font-size: 11px;
-      color: #918588;
-      margin-bottom: 20px;
+      letter-spacing: 3px;
+      font-size: 10px;
+      font-weight: 500;
+      margin-bottom: 16px;
     }
 
     h2 {
-      font-size: clamp(38px, 7vw, 65px);
-      font-weight: normal;
-      line-height: 1.05;
-      margin: 0 0 35px;
+      font-family: "Playfair Display", serif;
+      font-weight: 400;
+      color: #654550;
+      font-size: clamp(38px, 7vw, 62px);
+      line-height: 1.08;
+      margin: 0 0 28px;
     }
 
     p {
-      font-size: 18px;
+      font-size: 17px;
       line-height: 1.9;
-      color: #d0c6c8;
-      margin-bottom: 25px;
+      color: #745d64;
+      margin: 0 0 22px;
     }
 
     /* =========================
        HEART
     ========================= */
 
-    .heart-wrapper {
-      height: 100px;
-      margin: 20px 0 60px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
+    .heart-area {
+      text-align: center;
+      margin-bottom: 35px;
     }
 
     .heart {
-      width: 55px;
-      height: 55px;
-      background: #a95e6d;
+      display: inline-block;
       position: relative;
+      width: 38px;
+      height: 38px;
+      background: #ed91a7;
       transform: rotate(-45deg);
-      animation: heartbeat 2s infinite;
+      animation: heartbeat 2.1s ease-in-out infinite;
     }
 
     .heart::before,
     .heart::after {
       content: "";
       position: absolute;
-      width: 55px;
-      height: 55px;
-      background: #a95e6d;
+      width: 38px;
+      height: 38px;
+      background: #ed91a7;
       border-radius: 50%;
     }
 
     .heart::before {
-      top: -27px;
+      top: -19px;
       left: 0;
     }
 
     .heart::after {
-      left: 27px;
+      left: 19px;
       top: 0;
     }
 
     @keyframes heartbeat {
       0%, 100% {
-        transform: rotate(-45deg) scale(0.9);
+        transform: rotate(-45deg) scale(0.88);
       }
 
       50% {
@@ -245,125 +259,186 @@
     }
 
     /* =========================
-       BIG APOLOGY
+       APOLOGY
     ========================= */
 
-    .big-apology {
+    .apology {
       text-align: center;
-      padding: 70px 20px;
-      border-top: 1px solid #292527;
-      border-bottom: 1px solid #292527;
+      padding: 55px 25px;
+      background: rgba(255, 238, 243, 0.7);
+      border-radius: 28px;
+      border: 1px solid #f7dbe2;
     }
 
-    .big-apology h2 {
-      font-size: clamp(45px, 9vw, 85px);
+    .apology p {
+      max-width: 620px;
+      margin-left: auto;
+      margin-right: auto;
     }
 
-    .big-apology p {
-      max-width: 600px;
+    .small-sorry {
+      font-family: "Playfair Display", serif;
+      font-style: italic;
+      font-size: 22px;
+      color: #b36c7d;
+      margin-top: 35px;
+    }
+
+    /* =========================
+       PHOTO SECTIONS
+    ========================= */
+
+    .photo-section {
+      margin-top: 70px;
+    }
+
+    .photo-frame {
+      position: relative;
+      overflow: hidden;
+      border-radius: 24px;
+      background: #f6e6eb;
+      box-shadow: 0 15px 45px rgba(160, 91, 108, 0.10);
+    }
+
+    .photo-frame img {
+      display: block;
+      width: 100%;
+      aspect-ratio: 4 / 5;
+      object-fit: cover;
+      transition: transform 0.8s ease;
+    }
+
+    .photo-frame:hover img {
+      transform: scale(1.025);
+    }
+
+    .photo-caption {
+      padding: 25px 8px 0;
+    }
+
+    .photo-caption h3 {
+      font-family: "Playfair Display", serif;
+      font-size: 29px;
+      font-weight: 400;
+      color: #704c57;
+      margin: 0 0 12px;
+    }
+
+    .photo-caption p {
+      font-size: 16px;
+      color: #876d75;
+    }
+
+    .photo-note {
+      display: inline-block;
+      margin-top: 4px;
+      padding: 7px 13px;
+      border-radius: 100px;
+      background: #fde7ed;
+      color: #b26e80;
+      font-size: 12px;
+    }
+
+    /* =========================
+       LITTLE MEMORY CARD
+    ========================= */
+
+    .memory-card {
+      padding: 45px 30px;
+      background: #fff;
+      border-radius: 28px;
+      border: 1px solid #f5dfe5;
+      text-align: center;
+      box-shadow: 0 12px 35px rgba(160, 91, 108, 0.06);
+    }
+
+    .memory-card .tiny-heart {
+      color: #e58ba1;
+      font-size: 22px;
+      margin-bottom: 20px;
+    }
+
+    .memory-card h3 {
+      font-family: "Playfair Display", serif;
+      font-weight: 400;
+      font-size: 32px;
+      color: #684751;
+      margin: 0 0 20px;
+    }
+
+    .memory-card p {
+      max-width: 580px;
       margin-left: auto;
       margin-right: auto;
     }
 
     /* =========================
-       ABOUT HER
+       LOVE / HER SECTION
     ========================= */
 
-    .qualities {
+    .her-section {
+      padding-top: 20px;
+    }
+
+    .her-line {
+      font-family: "Playfair Display", serif;
+      font-size: clamp(25px, 5vw, 38px);
+      font-style: italic;
+      color: #875766;
+      line-height: 1.45;
+      margin: 35px 0;
+    }
+
+    .little-list {
+      margin-top: 35px;
       display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 15px;
-      margin-top: 40px;
+      gap: 13px;
     }
 
-    .quality {
-      border: 1px solid #292527;
-      padding: 30px 25px;
-      min-height: 150px;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      transition: 0.3s ease;
-    }
-
-    .quality:hover {
-      border-color: #604c51;
-      transform: translateY(-3px);
-    }
-
-    .quality h3 {
-      margin: 0 0 10px;
-      font-size: 21px;
-      font-weight: normal;
-      color: #eadfe1;
-    }
-
-    .quality span {
-      color: #968b8e;
-      line-height: 1.6;
-      font-size: 15px;
-    }
-
-    /* =========================
-       MEMORY
-    ========================= */
-
-    .memory {
-      margin-top: 70px;
-    }
-
-    .memory-image {
-      width: 100%;
-      aspect-ratio: 16 / 10;
-      object-fit: cover;
-      display: block;
-      background: #151214;
-      border: 1px solid #292527;
-    }
-
-    .memory-caption {
-      padding: 22px 5px 0;
-    }
-
-    .memory-caption h3 {
-      font-size: 25px;
-      font-weight: normal;
-      margin: 0 0 10px;
-    }
-
-    .memory-caption p {
-      color: #968b8e;
-      font-size: 15px;
+    .little-item {
+      background: #fff;
+      border: 1px solid #f4dfe5;
+      border-radius: 18px;
+      padding: 20px 22px;
+      color: #765d65;
       line-height: 1.7;
     }
 
+    .little-item strong {
+      color: #a65f73;
+      font-weight: 500;
+    }
+
     /* =========================
-       KISS MEMORY
+       FIRST KISS
     ========================= */
 
-    .kiss {
+    .kiss-section {
       text-align: center;
-      padding: 80px 20px;
+      padding: 70px 20px;
       background:
         radial-gradient(
-          circle,
-          rgba(145, 67, 80, 0.12),
+          circle at center,
+          rgba(255, 194, 208, 0.35),
           transparent 65%
         );
     }
 
-    .kiss .quote {
-      font-size: clamp(27px, 5vw, 43px);
+    .kiss-quote {
+      font-family: "Playfair Display", serif;
+      font-size: clamp(28px, 5vw, 43px);
       line-height: 1.45;
-      color: #eee3e5;
-      margin: 30px auto;
-      max-width: 650px;
+      color: #694752;
+      margin: 25px auto;
+      max-width: 620px;
     }
 
-    .kiss .small-note {
-      color: #8d8285;
+    .kiss-small {
+      color: #a17782;
       font-size: 14px;
-      letter-spacing: 1px;
+      line-height: 1.7;
+      max-width: 500px;
+      margin: auto;
     }
 
     /* =========================
@@ -372,32 +447,33 @@
 
     .final {
       text-align: center;
-      padding-bottom: 100px;
+      padding-bottom: 70px;
     }
 
     .final h2 {
       margin-bottom: 30px;
     }
 
-    .final-message {
-      max-width: 580px;
+    .final-content {
+      max-width: 600px;
       margin: auto;
     }
 
-    .signature {
-      margin-top: 60px;
+    .final-sorry {
+      font-family: "Playfair Display", serif;
       font-style: italic;
-      color: #b9adb0;
-      font-size: 20px;
-      line-height: 1.8;
+      color: #bd7487;
+      font-size: 23px;
+      margin-top: 40px;
     }
 
-    .footer {
-      text-align: center;
-      color: #51494b;
-      font-size: 12px;
-      letter-spacing: 1px;
-      padding-bottom: 30px;
+    .signature {
+      margin-top: 55px;
+      font-family: "Playfair Display", serif;
+      font-style: italic;
+      font-size: 21px;
+      line-height: 1.8;
+      color: #795460;
     }
 
     /* =========================
@@ -406,22 +482,22 @@
 
     .floating-heart {
       position: fixed;
-      bottom: -30px;
-      color: #a95e6d;
+      bottom: -25px;
+      color: #e99aae;
       pointer-events: none;
-      animation: float 7s linear forwards;
-      opacity: 0;
       z-index: 0;
+      opacity: 0;
+      animation: floatHeart 7s linear forwards;
     }
 
-    @keyframes float {
+    @keyframes floatHeart {
       0% {
         transform: translateY(0) scale(0.6);
         opacity: 0;
       }
 
       15% {
-        opacity: 0.4;
+        opacity: 0.45;
       }
 
       80% {
@@ -429,7 +505,7 @@
       }
 
       100% {
-        transform: translateY(-110vh) scale(1.1);
+        transform: translateY(-110vh) scale(1);
         opacity: 0;
       }
     }
@@ -441,53 +517,57 @@
     @media (max-width: 600px) {
 
       .main {
-        padding: 80px 20px;
+        padding: 70px 18px 40px;
       }
 
       section {
-        margin-bottom: 100px;
-      }
-
-      .qualities {
-        grid-template-columns: 1fr;
+        margin-bottom: 90px;
       }
 
       p {
-        font-size: 17px;
+        font-size: 16px;
+      }
+
+      .apology {
+        padding: 40px 20px;
+      }
+
+      .photo-frame img {
+        aspect-ratio: 4 / 5;
       }
     }
   </style>
 </head>
 
+
 <body>
 
   <div class="background">
-    <div class="glow one"></div>
-    <div class="glow two"></div>
+    <div class="blob one"></div>
+    <div class="blob two"></div>
   </div>
 
 
   <!-- =========================
-       OPENING SCREEN
+       OPENING
   ========================== -->
 
   <div class="opening" id="opening">
 
     <div class="opening-inner">
 
-      <div class="tiny">
+      <div class="for-you">
         For Vinny
       </div>
 
-      <h1>Wait.</h1>
+      <h1>♡</h1>
 
-      <p>
-        I could have just sent you a message.
-        But somehow, that didn't feel like enough.
-      </p>
+      <div class="opening-subtitle">
+        I made something for you.
+      </div>
 
       <button class="open-button" id="openButton">
-        I made something for you
+        Open
       </button>
 
     </div>
@@ -496,17 +576,19 @@
 
 
   <!-- =========================
-       MAIN WEBSITE
+       MAIN
   ========================== -->
 
   <main class="main" id="main">
 
 
-    <!-- APOLOGY -->
+    <!-- =========================
+         APOLOGY
+    ========================== -->
 
-    <section class="big-apology">
+    <section class="apology">
 
-      <div class="heart-wrapper">
+      <div class="heart-area">
         <div class="heart"></div>
       </div>
 
@@ -514,49 +596,54 @@
         First things first
       </div>
 
-      <h2>I'm sorry.</h2>
+      <h2>There are things I need to do better.</h2>
 
       <p>
-        I know those are just two words.
-        And I know two words aren't enough to undo something
-        that hurt you.
+        I know you've heard me say that before.
       </p>
 
       <p>
-        So I'm not going to use this page to explain myself,
-        defend myself, or tell you why you shouldn't be upset.
+        I've said that I'll put in more effort.
+        I've said I'll remember things.
+        I've said I'll do better.
       </p>
 
       <p>
-        I messed up.
-        I hurt you.
-        And I'm genuinely sorry.
+        And I know that hearing me promise the same things again
+        doesn't mean much when I've already made those promises
+        before.
       </p>
 
-    </section>
+      <p>
+        So I don't want this to be another promise that sounds
+        good because we're in the middle of a fight.
+      </p>
 
+      <p>
+        I want to become better at the things that shouldn't have
+        to be asked for in the first place.
+      </p>
 
-    <!-- HEARTFELT MESSAGE -->
+      <p>
+        Remembering the little things.
+        Paying attention.
+        Doing things because I thought of you,
+        not because you had to remind me.
+      </p>
 
-    <section>
+      <p>
+        I know that what matters isn't me saying that I'll change.
+        It's you actually seeing it.
+      </p>
 
-      <div class="section-label">
-        What I actually wanted to say
+      <p>
+        And I know I have to earn that trust through what I do,
+        not through another promise.
+      </p>
+
+      <div class="small-sorry">
+        I'm sorry, Vinny.
       </div>
-
-      <h2>You matter to me.</h2>
-
-      <p>
-        Sometimes I think I forget how much the little things matter.
-        A careless moment can hurt someone who means an enormous
-        amount to me.
-      </p>
-
-      <p>
-        And that's the part that bothers me the most.
-        Not just that we had a fight, but that I was the reason
-        you were hurt in the first place.
-      </p>
 
       <p>
         I don't expect this website to magically make everything
@@ -565,288 +652,378 @@
       </p>
 
       <p>
-        I just want you to know that I understand that I messed up,
-        I regret it, and I want my actions to show you that I'm
-        sorry instead of making you listen to me say it over and
-        over again.
+        I just want you to know that I understand why you're hurt,
+        and I want my actions from here to speak louder than
+        anything I could write here.
       </p>
 
     </section>
 
 
-    <!-- ABOUT VINNY -->
+    <!-- =========================
+         PHOTO 1
+    ========================== -->
+
+    <section class="photo-section">
+
+      <div class="section-label">
+        Before all of this
+      </div>
+
+      <div class="photo-frame">
+
+        <!--
+          PHOTO 1
+          Replace the URL below with the direct URL of
+          the FIRST PHOTO SHE EVER SENT YOU.
+        -->
+
+        <img
+          src="https://placehold.co/1000x1250/f9e8ed/9d6878?text=Your+First+Photo+Here"
+          alt="The first photo Vinny sent"
+        >
+
+      </div>
+
+      <div class="photo-caption">
+
+        <h3>The first photo you sent me.</h3>
+
+        <p>
+          Somewhere around here, this girl entered my life
+          and had absolutely no idea how much of it she was
+          eventually going to occupy.
+        </p>
+
+      </div>
+
+    </section>
+
+
+    <!-- =========================
+         PHOTO 2
+    ========================== -->
+
+    <section class="photo-section">
+
+      <div class="section-label">
+        An important photograph
+      </div>
+
+      <div class="photo-frame">
+
+        <!--
+          PHOTO 2
+          Replace the URL with the photo she likes the most.
+        -->
+
+        <img
+          src="https://placehold.co/1000x1250/f9e8ed/9d6878?text=Her+Favorite+Photo"
+          alt="One of Vinny's favorite photos"
+        >
+
+      </div>
+
+      <div class="photo-caption">
+
+        <h3>Yeah. I know why you like this one.</h3>
+
+        <p>
+          Also, I would like to formally acknowledge that the
+          person in this photograph is currently doing a comeback.
+        </p>
+
+        <span class="photo-note">
+          This guy will be with you again soon.
+        </span>
+
+      </div>
+
+    </section>
+
+
+    <!-- =========================
+         FIRST MEETING
+    ========================== -->
+
+    <section class="photo-section">
+
+      <div class="section-label">
+        The first time
+      </div>
+
+      <div class="photo-frame">
+
+        <!--
+          PHOTO 3
+          Replace the URL with the photo of you two
+          from the FIRST time you met.
+        -->
+
+        <img
+          src="https://placehold.co/1000x1250/f9e8ed/9d6878?text=First+Time+We+Met"
+          alt="The first time we met"
+        >
+
+      </div>
+
+      <div class="photo-caption">
+
+        <h3>Five minutes.</h3>
+
+        <p>
+          We finally met each other and somehow managed to get
+          only about five minutes together.
+        </p>
+
+        <p>
+          Five minutes isn't much.
+        </p>
+
+        <p>
+          But I remember being able to finally look at the person
+          I'd spent so much time talking to and think,
+          "Oh. You're actually real."
+        </p>
+
+      </div>
+
+    </section>
+
+
+    <!-- =========================
+         FIRST PROPER DATE
+    ========================== -->
+
+    <section class="photo-section">
+
+      <div class="section-label">
+        Then there was this
+      </div>
+
+      <div class="photo-frame">
+
+        <!--
+          PHOTO 4
+          Replace the URL with the photo from your
+          first proper date.
+        -->
+
+        <img
+          src="https://placehold.co/1000x1250/f9e8ed/9d6878?text=Our+First+Proper+Date"
+          alt="Our first proper date"
+        >
+
+      </div>
+
+      <div class="photo-caption">
+
+        <h3>I was looking at you.</h3>
+
+        <p>
+          And apparently I was having a very difficult time
+          looking anywhere else.
+        </p>
+
+        <p>
+          Maybe it was your eyes.
+        </p>
+
+        <p>
+          They really are unfairly cute.
+        </p>
+
+      </div>
+
+    </section>
+
+
+    <!-- =========================
+         FIRST KISS
+    ========================== -->
+
+    <section class="kiss-section">
+
+      <div class="section-label">
+        And then...
+      </div>
+
+      <div class="kiss-quote">
+        Our first kiss happened in an emergency exit
+        in a mall.
+      </div>
+
+      <div class="kiss-small">
+        Which is probably not the location anyone would put
+        in a romance movie.
+      </div>
+
+      <p style="margin-top: 28px;">
+        But it was ours.
+      </p>
+
+      <p>
+        And somehow that makes it perfect.
+      </p>
+
+    </section>
+
+
+    <!-- =========================
+         ABOUT HER
+    ========================== -->
+
+    <section class="her-section">
+
+      <div class="section-label">
+        And you
+      </div>
+
+      <h2>There is a lot about you that I love.</h2>
+
+      <div class="her-line">
+        Your hair. Your eyes. Your ridiculously nerdy brain.
+      </div>
+
+      <p>
+        Your hair is genuinely beautiful.
+        And your eyes might be one of my favorite things about you,
+        especially when they light up because you're excited about
+        something.
+      </p>
+
+      <p>
+        I love how nerdy you are too.
+        The way you get interested in something and actually get
+        into it is one of those things that makes you,
+        you.
+      </p>
+
+      <p>
+        And then there's the fact that you can get angry at me
+        ridiculously fast and somehow cool down ridiculously fast
+        too.
+      </p>
+
+      <p>
+        I probably shouldn't find that cute.
+      </p>
+
+      <p>
+        But I do.
+      </p>
+
+      <div class="little-list">
+
+        <div class="little-item">
+          <strong>"Boo"</strong><br>
+          One of my favorite names you've ever given me.
+        </div>
+
+        <div class="little-item">
+          <strong>"Duddu"</strong><br>
+          Somehow you can make this sound different every time.
+        </div>
+
+        <div class="little-item">
+          <strong>"Ammu"</strong><br>
+          And yes, I notice every single time you call me this.
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =========================
+         WHAT SHE MEANS
+    ========================== -->
 
     <section>
 
       <div class="section-label">
-        About you
+        The part that matters
       </div>
 
-      <h2>Things about you that I love.</h2>
-
-      <div class="qualities">
-
-        <div class="quality">
-          <h3>Your hair.</h3>
-          <span>
-            I don't think you realize how ridiculously beautiful
-            your hair is.
-          </span>
-        </div>
-
-        <div class="quality">
-          <h3>Your eyes.</h3>
-          <span>
-            Especially when they light up.
-            They're genuinely one of my favorite things about you.
-          </span>
-        </div>
-
-        <div class="quality">
-          <h3>Your nerdiness.</h3>
-          <span>
-            I love how your brain works and how you can get
-            completely invested in things you're interested in.
-          </span>
-        </div>
-
-        <div class="quality">
-          <h3>Your anger.</h3>
-          <span>
-            Yes, even this.
-            You get angry so fast, and then somehow cool down
-            ridiculously fast too. It's honestly adorable.
-          </span>
-        </div>
-
-      </div>
-
-    </section>
-
-
-    <!-- PHOTO 1 -->
-
-    <section class="memory">
-
-      <div class="section-label">
-        A little piece of us
-      </div>
-
-      <!--
-        PHOTO PLACEHOLDER 1
-
-        Upload your photo somewhere that gives you a direct
-        image URL, then replace the URL below.
-
-        Example:
-        https://i.imgur.com/XXXXXXXX.jpg
-      -->
-
-      <img
-        class="memory-image"
-        src="https://placehold.co/1200x750/151214/e8dde0?text=Put+Your+Photo+Here"
-        alt="A memory of us"
-      >
-
-      <div class="memory-caption">
-
-        <h3>One of the many little things I want to remember.</h3>
-
-        <p>
-          Replace this text with something specific about this photo.
-        </p>
-
-      </div>
-
-    </section>
-
-
-    <!-- PHOTO 2 -->
-
-    <section class="memory">
-
-      <!-- PHOTO PLACEHOLDER 2 -->
-
-      <img
-        class="memory-image"
-        src="https://placehold.co/1200x750/151214/e8dde0?text=Put+Your+Photo+Here"
-        alt="Another memory of us"
-      >
-
-      <div class="memory-caption">
-
-        <h3>Another little memory.</h3>
-
-        <p>
-          Some moments don't look important when they're happening.
-          Then later, you realize you never want to forget them.
-        </p>
-
-      </div>
-
-    </section>
-
-
-    <!-- FIRST KISS -->
-
-    <section class="kiss">
-
-      <div class="section-label">
-        One memory I definitely haven't forgotten
-      </div>
-
-      <div class="quote">
-        "Our first kiss happened in an emergency exit
-        in a mall."
-      </div>
-
-      <div class="small-note">
-        Honestly, we could have picked a more romantic location.
-      </div>
+      <h2>You are the person I look forward to.</h2>
 
       <p>
-        But somehow, I wouldn't trade that memory for a perfectly
-        planned romantic moment.
+        You're the person whose message I look forward to seeing.
+      </p>
+
+      <p>
+        You're the person I can talk to for hours and somehow
+        still have more things I want to tell.
+      </p>
+
+      <p>
+        You're the person I want to tell about the random thing
+        that happened five minutes ago.
+      </p>
+
+      <p>
+        You're the person whose voice can change my entire mood.
+      </p>
+
+      <p>
+        And somewhere along the way, talking to you stopped being
+        something I did during my day and became one of the things
+        that makes my day feel like mine.
       </p>
 
     </section>
 
 
-    <!-- PHOTO 3 -->
-
-    <section class="memory">
-
-      <!-- PHOTO PLACEHOLDER 3 -->
-
-      <img
-        class="memory-image"
-        src="https://placehold.co/1200x750/151214/e8dde0?text=Put+Your+Photo+Here"
-        alt="A special photo"
-      >
-
-      <div class="memory-caption">
-
-        <h3>This one is special.</h3>
-
-        <p>
-          Put your own caption here.
-        </p>
-
-      </div>
-
-    </section>
-
-
-    <!-- MORE HEARTFELT MESSAGE -->
-
-    <section>
-
-      <div class="section-label">
-        And one more thing
-      </div>
-
-      <h2>I'm still choosing you.</h2>
-
-      <p>
-        Through the stupid arguments, the ridiculous conversations,
-        the random calls, the teasing, the moments where one of us
-        gets annoyed at the other for absolutely no reason...
-      </p>
-
-      <p>
-        Through all of it, you're still the person I want to tell
-        things to.
-      </p>
-
-      <p>
-        You're still the person whose messages I look forward to.
-        You're still the person whose voice can completely change
-        my mood.
-      </p>
-
-      <p>
-        And you're still the person I want beside me when everything
-        eventually becomes less complicated than it is right now.
-      </p>
-
-    </section>
-
-
-    <!-- PHOTO 4 -->
-
-    <section class="memory">
-
-      <!-- PHOTO PLACEHOLDER 4 -->
-
-      <img
-        class="memory-image"
-        src="https://placehold.co/1200x750/151214/e8dde0?text=Put+Your+Photo+Here"
-        alt="Another special memory"
-      >
-
-      <div class="memory-caption">
-
-        <h3>For the memories we already have.</h3>
-
-        <p>
-          And hopefully for all the ridiculous ones we haven't
-          made yet.
-        </p>
-
-      </div>
-
-    </section>
-
-
-    <!-- FINAL -->
+    <!-- =========================
+         FINAL
+    ========================== -->
 
     <section class="final">
 
       <div class="section-label">
-        So, Vinny...
+        One last thing
       </div>
 
-      <h2>I'm sorry.</h2>
+      <h2>Come talk to your boo.</h2>
 
-      <div class="final-message">
+      <div class="final-content">
 
         <p>
-          I know I can't fix everything with a website.
+          I know I can't fix everything through a website.
         </p>
 
         <p>
-          But I wanted to do something that took more than
-          thirty seconds and a text saying "sorry."
+          I know that saying sorry doesn't erase what happened.
         </p>
 
         <p>
-          Because you're worth more effort than that.
+          And I know I have things to prove through what I do,
+          not what I say.
         </p>
 
         <p>
-          You deserve to feel loved, understood, and appreciated.
-          And I'm sorry for the moments when I made you feel
-          anything less than that.
+          But I wanted you to know that underneath all the stupid
+          arguments, the teasing, the getting angry at each other,
+          the making up, the laughing, and everything else that
+          somehow became our relationship...
         </p>
 
         <p>
-          So whenever you're ready...
-          come talk to your boo.
+          I love you.
         </p>
+
+        <div class="final-sorry">
+          I'm sorry.
+        </div>
 
         <div class="signature">
-          Love,<br>
-          your duddu / ammu
+          Your boo,<br>
+          duddu ♡
         </div>
 
       </div>
 
     </section>
-
-
-    <div class="footer">
-      made with more effort than a normal text message
-    </div>
 
   </main>
 
@@ -862,7 +1039,9 @@
       opening.classList.add("hidden");
 
       setTimeout(() => {
+
         opening.style.display = "none";
+
         main.classList.add("visible");
 
         startFloatingHearts();
@@ -879,16 +1058,16 @@
         const heart = document.createElement("div");
 
         heart.className = "floating-heart";
-        heart.innerHTML = "♥";
+        heart.innerHTML = "♡";
 
         heart.style.left =
           Math.random() * 100 + "vw";
 
         heart.style.fontSize =
-          (12 + Math.random() * 14) + "px";
+          (13 + Math.random() * 12) + "px";
 
         heart.style.animationDuration =
-          (5 + Math.random() * 5) + "s";
+          (5 + Math.random() * 4) + "s";
 
         document.body.appendChild(heart);
 
@@ -896,7 +1075,7 @@
           heart.remove();
         }, 10000);
 
-      }, 900);
+      }, 1000);
 
     }
 
