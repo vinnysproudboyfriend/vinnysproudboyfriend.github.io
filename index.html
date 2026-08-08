@@ -26,7 +26,7 @@
     }
 
     /* =========================
-       BACKGROUND
+       SOFT PINK BACKGROUND
     ========================= */
 
     .background {
@@ -38,12 +38,12 @@
       background:
         radial-gradient(
           circle at 20% 20%,
-          rgba(255, 183, 199, 0.22),
+          rgba(255, 183, 199, 0.24),
           transparent 32%
         ),
         radial-gradient(
           circle at 85% 75%,
-          rgba(255, 210, 220, 0.28),
+          rgba(255, 210, 220, 0.30),
           transparent 35%
         ),
         #fff8fa;
@@ -121,10 +121,21 @@
     .opening h1 {
       font-family: "Playfair Display", serif;
       font-weight: 400;
-      font-size: clamp(58px, 12vw, 105px);
-      color: #6f4854;
+      font-size: clamp(70px, 14vw, 120px);
+      color: #e98da4;
       margin: 0;
       line-height: 0.95;
+      animation: softPulse 2.5s ease-in-out infinite;
+    }
+
+    @keyframes softPulse {
+      0%, 100% {
+        transform: scale(1);
+      }
+
+      50% {
+        transform: scale(1.07);
+      }
     }
 
     .opening-subtitle {
@@ -138,13 +149,15 @@
       border: none;
       background: #e98da4;
       color: white;
-      padding: 14px 28px;
+      padding: 14px 30px;
       border-radius: 100px;
       font-family: inherit;
       font-size: 14px;
       cursor: pointer;
       box-shadow: 0 8px 25px rgba(210, 105, 130, 0.18);
-      transition: transform 0.25s ease, box-shadow 0.25s ease;
+      transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
     }
 
     .open-button:hover {
@@ -265,7 +278,7 @@
     .apology {
       text-align: center;
       padding: 55px 25px;
-      background: rgba(255, 238, 243, 0.7);
+      background: rgba(255, 238, 243, 0.72);
       border-radius: 28px;
       border: 1px solid #f7dbe2;
     }
@@ -340,40 +353,39 @@
     }
 
     /* =========================
-       LITTLE MEMORY CARD
+       KISS SECTION
     ========================= */
 
-    .memory-card {
-      padding: 45px 30px;
-      background: #fff;
-      border-radius: 28px;
-      border: 1px solid #f5dfe5;
+    .kiss-section {
       text-align: center;
-      box-shadow: 0 12px 35px rgba(160, 91, 108, 0.06);
+      padding: 70px 20px;
+      background:
+        radial-gradient(
+          circle at center,
+          rgba(255, 194, 208, 0.35),
+          transparent 65%
+        );
     }
 
-    .memory-card .tiny-heart {
-      color: #e58ba1;
-      font-size: 22px;
-      margin-bottom: 20px;
-    }
-
-    .memory-card h3 {
+    .kiss-quote {
       font-family: "Playfair Display", serif;
-      font-weight: 400;
-      font-size: 32px;
-      color: #684751;
-      margin: 0 0 20px;
+      font-size: clamp(28px, 5vw, 43px);
+      line-height: 1.45;
+      color: #694752;
+      margin: 25px auto;
+      max-width: 620px;
     }
 
-    .memory-card p {
-      max-width: 580px;
-      margin-left: auto;
-      margin-right: auto;
+    .kiss-small {
+      color: #a17782;
+      font-size: 14px;
+      line-height: 1.7;
+      max-width: 500px;
+      margin: auto;
     }
 
     /* =========================
-       LOVE / HER SECTION
+       HER SECTION
     ========================= */
 
     .her-section {
@@ -407,38 +419,6 @@
     .little-item strong {
       color: #a65f73;
       font-weight: 500;
-    }
-
-    /* =========================
-       FIRST KISS
-    ========================= */
-
-    .kiss-section {
-      text-align: center;
-      padding: 70px 20px;
-      background:
-        radial-gradient(
-          circle at center,
-          rgba(255, 194, 208, 0.35),
-          transparent 65%
-        );
-    }
-
-    .kiss-quote {
-      font-family: "Playfair Display", serif;
-      font-size: clamp(28px, 5vw, 43px);
-      line-height: 1.45;
-      color: #694752;
-      margin: 25px auto;
-      max-width: 620px;
-    }
-
-    .kiss-small {
-      color: #a17782;
-      font-size: 14px;
-      line-height: 1.7;
-      max-width: 500px;
-      margin: auto;
     }
 
     /* =========================
@@ -593,30 +573,30 @@
       </div>
 
       <div class="section-label">
-        First things first
+        firstlyyyy
       </div>
 
       <h2>There are things I need to do better.</h2>
 
       <p>
-        I know you've heard me say that before.
+        Yeah I know you've heard me say that before kanna.
       </p>
 
       <p>
-        I've said that I'll put in more effort.
-        I've said I'll remember things.
+        I've said that I'll put in more effort.<br>
+        I've said I'll remember things.<br>
         I've said I'll do better.
       </p>
 
       <p>
-        And I know that hearing me promise the same things again
-        doesn't mean much when I've already made those promises
-        before.
+        And naku telusu that hearing me promise the same things
+        again and again and again doesn't mean much when I've
+        already made those promises before.
       </p>
 
       <p>
-        So I don't want this to be another promise that sounds
-        good because we're in the middle of a fight.
+        So I don't want this to be edo just another promise that
+        sounds good because we're in the middle of a fight.
       </p>
 
       <p>
@@ -625,20 +605,20 @@
       </p>
 
       <p>
-        Remembering the little things.
-        Paying attention.
-        Doing things because I thought of you,
-        not because you had to remind me.
+        Remembering the little things.<br>
+        Paying attention.<br>
+        Doing things because I thought of you, NOT because you had
+        to remind me.
       </p>
 
       <p>
-        I know that what matters isn't me saying that I'll change.
-        It's you actually seeing it.
+        I know that what matters isn't me saying that I'll change kanna<br>
+        It's YOU actually seeing the change and feeling loved.
       </p>
 
       <p>
         And I know I have to earn that trust through what I do,
-        not through another promise.
+        not just itla making another utti promise
       </p>
 
       <div class="small-sorry">
@@ -646,15 +626,15 @@
       </div>
 
       <p>
-        I don't expect this website to magically make everything
+        I don't expect this website to edo magically make everything
         okay. And I don't expect you to instantly stop being angry
         with me.
       </p>
 
       <p>
-        I just want you to know that I understand why you're hurt,
-        and I want my actions from here to speak louder than
-        anything I could write here.
+        I just want you to know that I DO understand why you're hurt,
+        and I want my actions from here to speak louder than anything
+        I could write here ra buddi
       </p>
 
     </section>
@@ -673,9 +653,9 @@
       <div class="photo-frame">
 
         <!--
-          PHOTO 1
-          Replace the URL below with the direct URL of
-          the FIRST PHOTO SHE EVER SENT YOU.
+          PHOTO 1:
+          Replace this URL with the direct URL of
+          the first photo she ever sent you.
         -->
 
         <img
@@ -690,9 +670,9 @@
         <h3>The first photo you sent me.</h3>
 
         <p>
-          Somewhere around here, this girl entered my life
-          and had absolutely no idea how much of it she was
-          eventually going to occupy.
+          Somewhere around this, this cute nerdy girl entered my life
+          and had absolutely NO idea how she was going become what
+          my entire life revolves around
         </p>
 
       </div>
@@ -707,34 +687,34 @@
     <section class="photo-section">
 
       <div class="section-label">
-        An important photograph
+        Your Handsome Boyfriend
       </div>
 
       <div class="photo-frame">
 
         <!--
-          PHOTO 2
-          Replace the URL with the photo she likes the most.
+          PHOTO 2:
+          Replace this URL with the photo she likes.
         -->
 
         <img
           src="https://placehold.co/1000x1250/f9e8ed/9d6878?text=Her+Favorite+Photo"
-          alt="One of Vinny's favorite photos"
+          alt="Your handsome boyfriend"
         >
 
       </div>
 
       <div class="photo-caption">
 
-        <h3>Yeah. I know why you like this one.</h3>
+        <h3>Yoss. I know why you like this one.</h3>
 
         <p>
-          Also, I would like to formally acknowledge that the
-          person in this photograph is currently doing a comeback.
+          andddd, I would like to formally acknowledge that the person
+          in this photograph is currently doing a comeback.
         </p>
 
         <span class="photo-note">
-          This guy will be with you again soon.
+          This guy will be with you again soon. 😤💪
         </span>
 
       </div>
@@ -749,20 +729,20 @@
     <section class="photo-section">
 
       <div class="section-label">
-        The first time
+        The veryy first meeting
       </div>
 
       <div class="photo-frame">
 
         <!--
-          PHOTO 3
-          Replace the URL with the photo of you two
-          from the FIRST time you met.
+          PHOTO 3:
+          Replace this URL with the photo from
+          the first time you met.
         -->
 
         <img
           src="https://placehold.co/1000x1250/f9e8ed/9d6878?text=First+Time+We+Met"
-          alt="The first time we met"
+          alt="The very first meeting"
         >
 
       </div>
@@ -772,18 +752,18 @@
         <h3>Five minutes.</h3>
 
         <p>
-          We finally met each other and somehow managed to get
-          only about five minutes together.
+          We finally met each other and somehow managed to get only
+          about five minutes together. (I also held your hand hehehe)
         </p>
 
         <p>
-          Five minutes isn't much.
+          Five minutes is not that much time kani
         </p>
 
         <p>
-          But I remember being able to finally look at the person
-          I'd spent so much time talking to and think,
-          "Oh. You're actually real."
+          I remember being able to finally look at the person I'd
+          spent so much time talking to and think,
+          "Oh. You're actually real." ofgpeihigjteipjhpetjgjetpifgr
         </p>
 
       </div>
@@ -798,15 +778,15 @@
     <section class="photo-section">
 
       <div class="section-label">
-        Then there was this
+        andd thenn there was thisss
       </div>
 
       <div class="photo-frame">
 
         <!--
-          PHOTO 4
-          Replace the URL with the photo from your
-          first proper date.
+          PHOTO 4:
+          Replace this URL with the photo from
+          your first proper date.
         -->
 
         <img
@@ -821,16 +801,16 @@
         <h3>I was looking at you.</h3>
 
         <p>
-          And apparently I was having a very difficult time
-          looking anywhere else.
+          And apparently I was having a very difficult time looking
+          anywhere else. 🙈
         </p>
 
         <p>
-          Maybe it was your eyes.
+          Maybe it was your eyes
         </p>
 
         <p>
-          They really are unfairly cute.
+          They really really really reallyyyy are unfairly cute. 😍
         </p>
 
       </div>
@@ -845,25 +825,32 @@
     <section class="kiss-section">
 
       <div class="section-label">
-        And then...
+        And thennnnnn
       </div>
 
       <div class="kiss-quote">
-        Our first kiss happened in an emergency exit
-        in a mall.
+        Our first kiss happened in an emergency exit in that mall
       </div>
 
-      <div class="kiss-small">
-        Which is probably not the location anyone would put
-        in a romance movie.
-      </div>
+      <p>
+        my heart was beating soo fast and yeah i took you there to
+        kiss only but before i made a move you just kissed me on the
+        cheeks and then we just spontaneously kissed each other on
+        the lips 🫣🫣
+      </p>
 
-      <p style="margin-top: 28px;">
-        But it was ours.
+      <p>
+        The kiss wasnt really perfect or as passionate as we both
+        wanted it 😭
+      </p>
+
+      <p>
+        butttttt it was ours
       </p>
 
       <p>
         And somehow that makes it perfect.
+        (Still cant forget the feeling of your mruduvaina pedalu btw)
       </p>
 
     </section>
@@ -876,58 +863,25 @@
     <section class="her-section">
 
       <div class="section-label">
-        And you
+        And youyyyyy
       </div>
 
       <h2>There is a lot about you that I love.</h2>
 
       <div class="her-line">
-        Your hair. Your eyes. Your ridiculously nerdy brain.
+        Your hair. Your eyes. Your mudduness, Your nerdyness,
+        Your sathyabhama-esque personality, Your goofyness,
+        aaaaaaaaaaa EVERYTHINGGG, Nuvvvu na inti Maha Lakshmi
       </div>
 
-      <p>
-        Your hair is genuinely beautiful.
-        And your eyes might be one of my favorite things about you,
-        especially when they light up because you're excited about
-        something.
-      </p>
-
-      <p>
-        I love how nerdy you are too.
-        The way you get interested in something and actually get
-        into it is one of those things that makes you,
-        you.
-      </p>
-
-      <p>
-        And then there's the fact that you can get angry at me
-        ridiculously fast and somehow cool down ridiculously fast
-        too.
-      </p>
-
-      <p>
-        I probably shouldn't find that cute.
-      </p>
-
-      <p>
-        But I do.
-      </p>
+    
 
       <div class="little-list">
 
         <div class="little-item">
-          <strong>"Boo"</strong><br>
-          One of my favorite names you've ever given me.
-        </div>
-
-        <div class="little-item">
-          <strong>"Duddu"</strong><br>
-          Somehow you can make this sound different every time.
-        </div>
-
-        <div class="little-item">
-          <strong>"Ammu"</strong><br>
-          And yes, I notice every single time you call me this.
+          <strong>The names you have given me</strong><br>
+          Boo, Duddu, Kittulu riyhfbrifhhuirhhfur3uogf
+          i just roll in prema whenver you call me these nicknames
         </div>
 
       </div>
@@ -936,24 +890,22 @@
 
 
     <!-- =========================
-         WHAT SHE MEANS
+         THE PERSON I LOOK FORWARD TO
     ========================== -->
 
     <section>
 
-      <div class="section-label">
-        The part that matters
-      </div>
-
-      <h2>You are the person I look forward to.</h2>
+      <h2>
+        I want you to know one thing kanna, you are the person
+        I look forward to. ALWAYS
+      </h2>
 
       <p>
         You're the person whose message I look forward to seeing.
       </p>
 
       <p>
-        You're the person I can talk to for hours and somehow
-        still have more things I want to tell.
+        You're the person I can talk to for hours and never be bored
       </p>
 
       <p>
@@ -966,9 +918,9 @@
       </p>
 
       <p>
-        And somewhere along the way, talking to you stopped being
-        something I did during my day and became one of the things
-        that makes my day feel like mine.
+        and at one point, talking to you stopped being something
+        I did during my day and became one of the things that makes
+        my day feel like mine.
       </p>
 
     </section>
@@ -984,7 +936,9 @@
         One last thing
       </div>
 
-      <h2>Come talk to your boo.</h2>
+      <h2>
+        Come talk to your boo. 🥺
+      </h2>
 
       <div class="final-content">
 
@@ -1003,9 +957,9 @@
 
         <p>
           But I wanted you to know that underneath all the stupid
-          arguments, the teasing, the getting angry at each other,
-          the making up, the laughing, and everything else that
-          somehow became our relationship...
+          arguments, the teasing, the getting angry, the making up,
+          the laughing, and everything else that somehow became
+          our relationship,
         </p>
 
         <p>
@@ -1017,8 +971,7 @@
         </div>
 
         <div class="signature">
-          Your boo,<br>
-          duddu ♡
+          Your boo,
         </div>
 
       </div>
